@@ -32,16 +32,17 @@ int main()
     
     while (escolha != 's'){
         
-    printf("Digite o numero do exercicio que deseja selecionar\n1: Fibonacci\n=");
+    printf("Digite o numero do exercicio que deseja selecionar\n1: Fibonacci\n0: Nenhum\n=");
     scanf("%i", &escolha);
     
         switch(escolha){
             case 1:
                 fibonacci();
-            
-        }
-        
-        
-    }
+            case 0:
+                printf("O programa será encerrado");
+                break;
+            }        
     return 0;
+    }
+    
 }
