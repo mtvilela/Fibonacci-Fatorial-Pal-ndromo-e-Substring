@@ -30,19 +30,18 @@ int main()
 {
     int escolha;
     
-    while (escolha != 's'){
+    while (1) {
+        printf("Digite o numero do exercicio que deseja selecionar\n1: Fibonacci\n0: Sair\n=");
+        scanf("%i", &escolha);
         
-    printf("Digite o numero do exercicio que deseja selecionar\n1: Fibonacci\n0: Nenhum\n=");
-    scanf("%i", &escolha);
-    
-        switch(escolha){
+        switch(escolha) {
             case 1:
                 fibonacci();
-            case 0:
-                printf("O programa será encerrado");
                 break;
-            }        
-    return 0;
+            case 0:
+                printf("O programa será encerrado\n");
+                return 0;
+        }
     }
-    
+    return 0;
 }
