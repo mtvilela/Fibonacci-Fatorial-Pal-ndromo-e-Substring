@@ -60,27 +60,26 @@ void fatoriais() {
 void verificarPalindromo() {
     char texto[101];
     int inicio = 0, fim;
-    int igual = 1;
+    bool ehPalindromo = true;
 
     printf("Digite uma palavra: ");
     scanf("%100s", texto);
 
-    for (fim = 0; texto[fim] != '\0'; fim++);
-
-    fim--;
+    fim = strlen(texto) - 1;
 
     while (inicio < fim) {
         if (texto[inicio] != texto[fim]) {
-            igual = 0;
+            ehPalindromo = false;
+            break;
         }
         inicio++;
         fim--;
     }
 
-    if (igual == 1) {
-        printf("A palavra é um palíndromo.\n\n");
+    if (ehPalindromo) {
+        printf("\"%s\" é um palíndromo.\n\n", texto);
     } else {
-        printf("A palavra NÃO é um palíndromo.\n\n");
+        printf("\"%s\" NÃO é um palíndromo.\n\n", texto);
     }
 }
 
