@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -50,6 +51,34 @@ void fatoriais() {
     printf("\n");
 }
 
+void verificarPalindromo() {
+    char texto[101];
+    int inicio = 0, fim;
+    int igual = 1;
+
+    printf("Digite uma palavra: ");
+    scanf("%100s", texto);
+
+    // Calcular comprimento manualmente
+    for (fim = 0; texto[fim] != '\0'; fim++);
+
+    fim--;  // Último caractere válido
+
+    while (inicio < fim) {
+        if (texto[inicio] != texto[fim]) {
+            igual = 0;
+        }
+        inicio++;
+        fim--;
+    }
+
+    if (igual == 1) {
+        printf("A palavra é um palíndromo.\n\n");
+    } else {
+        printf("A palavra NÃO é um palíndromo.\n\n");
+    }
+}
+
 int main() {
     int escolha;
 
@@ -57,6 +86,7 @@ int main() {
         printf("========== MENU ==========\n");
         printf("1: Fibonacci\n");
         printf("2: Fatoriais\n");
+        printf("3: Verificar palíndromo\n");
         printf("0: Sair\n");
         printf("==========================\n");
         printf("Escolha uma opção: ");
@@ -70,11 +100,14 @@ int main() {
             case 2:
                 fatoriais();
                 break;
+            case 3:
+                verificarPalindromo();
+                break;
             case 0:
                 printf("O programa será encerrado.\n");
                 return 0;
             default:
-                printf("Opção inválida. Por favor, escolha 0, 1 ou 2.\n\n");
+                printf("Opção inválida. Por favor, escolha 0, 1, 2 ou 3.\n\n");
                 break;
         }
     }
