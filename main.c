@@ -83,6 +83,21 @@ void verificarPalindromo() {
     }
 }
 
+void substring() {
+    char str1[101], str2[101];
+    printf("Digite a primeira string: ");
+    scanf("%100s", str1);
+    printf("Digite a segunda string: ");
+    scanf("%100s", str2);
+    
+    if (strstr(str1, str2) != NULL) {
+        printf("A segunda string está contida na primeira.\n");
+    } else {
+        printf("A segunda string NÃO está contida na primeira.\n");
+    }
+}
+
+
 int main() {
     int escolha;
 
@@ -106,6 +121,9 @@ int main() {
                 break;
             case 3:
                 verificarPalindromo();
+                break;
+            case 4:
+                substring();
                 break;
             case 0:
                 printf("O programa será encerrado.\n");
