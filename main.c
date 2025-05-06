@@ -10,7 +10,8 @@ void fibonacci() {
     long long fib[50] = {0, 1};
     
     if (n < 1 || n > 50) {
-        printf("Número inválido");
+        printf("O número que foi digitado não é válido\n\n");
+        return;
     }
     
     for (int i = 2; i < n; i++) {
@@ -22,12 +23,32 @@ void fibonacci() {
     for (int i = 0; i < n; i++) {
         printf("%lld \n", fib[i]);
     }
-    printf("\n");
+    printf("\n");}
     
+void fatoriais() {
+    int n;
+    printf("Digite um numero inteiro (1 - 20) :");
+    scanf("%d", &n);
+    
+    if (n < 1 || n > 20){
+        printf("O número que foi digitado não é válido\n\n");
+        return;
+    }
+    
+    long long fat[20] = {1};
+    
+   for (int i = 1; i < n; i++) {
+    fat[i] = fat[i-1] * (i+1);
 }
 
-int main()
-{
+    printf("Resultado Fatoriais até %d\n", n);
+    for (int i = 0; i < n; i++) {
+    printf("%d! = %lld\n", i+1, fat[i]);
+}
+    printf("\n");
+}
+
+int main() {
     int escolha;
     
     while (1) {
@@ -43,5 +64,4 @@ int main()
                 return 0;
         }
     }
-    return 0;
 }
