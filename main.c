@@ -1,3 +1,9 @@
+/*
+Matheus Vilela Silveira RM 564989
+Maria Eduarda de Aquila Amaral RM 563783
+Lucas de Freitas Barbosa, 564685
+Marcus Vinicius Vieira Monteiro, 566031
+*/
 
 #include <stdio.h>
 #include <string.h>
