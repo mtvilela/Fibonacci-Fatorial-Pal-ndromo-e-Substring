@@ -100,16 +100,26 @@ void substring() {
 
 int main() {
     int escolha;
+    char buffer[100]; // Buffer para limpar entradas inválidas
 
     while (1) {
         printf("========== MENU ==========\n");
         printf("1: Fibonacci\n");
         printf("2: Fatoriais\n");
-        printf("3: Verificar palíndromo\n");
+        printf("3: Palíndromo\n");
+        printf("4: Substring\n");
         printf("0: Sair\n");
         printf("==========================\n");
         printf("Escolha uma opção: ");
-        scanf("%d", &escolha);
+
+        
+        if (scanf("%d", &escolha) != 1) {
+           
+            scanf("%99s", buffer);
+            printf("\nEntrada inválida! Digite apenas números.\n\n");
+            continue;
+        }
+
         printf("\n");
 
         switch (escolha) {
@@ -128,9 +138,6 @@ int main() {
             case 0:
                 printf("O programa será encerrado.\n");
                 return 0;
-            default:
-                printf("Opção inválida. Por favor, escolha 0, 1, 2 ou 3.\n\n");
-                break;
         }
     }
 }
