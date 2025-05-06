@@ -65,10 +65,9 @@ void verificarPalindromo() {
     printf("Digite uma palavra: ");
     scanf("%100s", texto);
 
-    // Calcular comprimento manualmente
     for (fim = 0; texto[fim] != '\0'; fim++);
 
-    fim--;  // Último caractere válido
+    fim--;
 
     while (inicio < fim) {
         if (texto[inicio] != texto[fim]) {
