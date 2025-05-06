@@ -52,12 +52,15 @@ int main() {
     int escolha;
     
     while (1) {
-        printf("Digite o numero do exercicio que deseja selecionar\n1: Fibonacci\n0: Sair\n=");
+        printf("Digite o numero do exercicio que deseja selecionar\n1: Fibonacci\n2: Fatoriais\n0: Sair\n=");
         scanf("%i", &escolha);
         
         switch(escolha) {
             case 1:
                 fibonacci();
+                break;
+            case 2:
+                fatoriais();
                 break;
             case 0:
                 printf("O programa será encerrado\n");
